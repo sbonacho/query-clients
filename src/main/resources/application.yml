@@ -1,0 +1,27 @@
+server:
+  port: 8082
+
+#TODO: figure out why I need this here and in bootstrap.yml
+spring:
+  application:
+    name: testLatticeApp
+
+ribbon:
+  ServerListRefreshInterval: 1000
+
+endpoints:
+  health:
+    sensitive: false
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+
+kafka:
+  bootstrap-servers: 172.16.123.1:9092
+
+connector:
+  topics:
+    app: createClient
+    saga: saga
+  group: queryClients
