@@ -75,6 +75,7 @@ public class ClientsQueryBootTests {
 
         Thread.sleep(100);
 		kafkaTemplate.send(saga, completed);
+        Thread.sleep(100);
 
         // Check if client is in DataBase
         mockMvc.perform(get("/client")).andDo(print()).andExpect(status().isOk())
