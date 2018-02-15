@@ -73,20 +73,12 @@ public class ClientsQueryBootTests {
 
 		// Send mocked events --------------------
 
-        LOGGER.info("-------------- 1 -----------");
+        Thread.sleep(100);
 		kafkaTemplate.send(saga, completed);
-        LOGGER.info("-------------- 2 -----------");
-
-        Thread.sleep(10000);
-        LOGGER.info("-------------- 3 -----------");
-
 
         // Check if client is in DataBase
         mockMvc.perform(get("/client")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(Matchers.containsString(completed.getAddress())));
-        LOGGER.info("-------------- 4 -----------");
-
-
     }
 
 }
