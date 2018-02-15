@@ -70,7 +70,7 @@ public class ClientsQueryBootTests {
 		// Send mocked events --------------------
 
 		kafkaTemplate.send(saga, completed);
-        Thread.sleep(2000);
+        Thread.sleep(10000);
 
         // Check if client is in DataBase
         mockMvc.perform(get("/client")).andDo(print()).andExpect(status().isOk())
