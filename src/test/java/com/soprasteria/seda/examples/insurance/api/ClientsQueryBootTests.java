@@ -9,6 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -36,6 +38,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @DirtiesContext
 @EmbeddedKafka(partitions = 1, topics = { ClientsQueryBootTests.saga })
 public class ClientsQueryBootTests {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClientsQueryBootTests.class);
 
     @Autowired
     private MockMvc mockMvc;
@@ -69,12 +73,19 @@ public class ClientsQueryBootTests {
 
 		// Send mocked events --------------------
 
+        LOGGER.info("-------------- 1 -----------");
 		kafkaTemplate.send(saga, completed);
+        LOGGER.info("-------------- 2 -----------");
+
         Thread.sleep(10000);
+        LOGGER.info("-------------- 3 -----------");
+
 
         // Check if client is in DataBase
         mockMvc.perform(get("/client")).andDo(print()).andExpect(status().isOk())
                 .andExpect(content().string(Matchers.containsString(completed.getAddress())));
+        LOGGER.info("-------------- 4 -----------");
+
 
     }
 
