@@ -1,4 +1,4 @@
-package com.soprasteria.seda.examples.insurance;
+package com.sbonacho.seda.examples.insurance;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,8 +1,8 @@
-package com.soprasteria.seda.examples.insurance.bus.kafka.listeners;
+package com.sbonacho.seda.examples.insurance.bus.kafka.listeners;
 
-import com.soprasteria.seda.examples.insurance.events.ClientPortfolioCompleted;
-import com.soprasteria.seda.examples.insurance.model.ClientPorfolio;
-import com.soprasteria.seda.examples.insurance.persistence.ClientRepository;
+import com.sbonacho.seda.examples.insurance.events.ClientPortfolioCompleted;
+import com.sbonacho.seda.examples.insurance.model.ClientPorfolio;
+import com.sbonacho.seda.examples.insurance.persistence.ClientRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

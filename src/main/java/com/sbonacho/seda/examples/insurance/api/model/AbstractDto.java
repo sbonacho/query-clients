@@ -1,19 +1,8 @@
-package com.soprasteria.seda.examples.insurance.events;
+package com.sbonacho.seda.examples.insurance.api.model;
 
 import java.io.Serializable;
 
-public abstract class AbstractEvent implements Serializable {
-
-    private final String type;
-
-    protected AbstractEvent() {
-        this.type = this.getClass().getSimpleName();
-    }
-
-    public String getType() {
-        return type;
-    }
-
+public abstract class AbstractDto implements Serializable {
     @Override
     public String toString() {
         try {

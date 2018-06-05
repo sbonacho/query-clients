@@ -1,4 +1,4 @@
-package com.soprasteria.seda.examples.insurance.api.model;
+package com.sbonacho.seda.examples.insurance.api.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

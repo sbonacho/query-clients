@@ -1,7 +1,7 @@
-package com.soprasteria.seda.examples.insurance.api;
+package com.sbonacho.seda.examples.insurance.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.soprasteria.seda.examples.insurance.events.ClientPortfolioCompleted;
+import com.sbonacho.seda.examples.insurance.events.ClientPortfolioCompleted;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -90,7 +90,7 @@ public class ClientsQueryBootTests {
 
         // create a Kafka consumer factory
         JsonDeserializer des = new JsonDeserializer<>(Object.class);
-        des.addTrustedPackages("com.soprasteria.seda.examples.insurance.events");
+        des.addTrustedPackages("com.sbonacho.seda.examples.insurance.events");
         DefaultKafkaConsumerFactory<String, Object> consumerFactory = new DefaultKafkaConsumerFactory<String, Object>(consumerProperties, new StringDeserializer(), des);
 
         // set the topic that needs to be consumed

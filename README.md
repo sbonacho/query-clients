@@ -32,7 +32,7 @@ mvn install dockerfile:build
 This command starts the service with ch-create-clientPorfolio name
 
 ```
-docker run --rm -p 8082:8082 -dit --name query-clients soprasteria/query-clients
+docker run --rm -p 8082:8082 -dit --name query-clients sbonacho/query-clients
 ```
 
 Watching logs
